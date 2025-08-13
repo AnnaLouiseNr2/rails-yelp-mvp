@@ -1,0 +1,22 @@
+<h1>Restaurants#index</h1>
+<p>Find me in app/views/restaurants/index.html.erb</p>
+
+<div id="restaurants">
+  <% @restaurants.each do |restaurant| %>
+    <div>
+      <p><strong>Name:</strong> <%= restaurant.name %></p>
+      <p><strong>Address:</strong> <%= restaurant.address %></p>
+      <p><strong>Category:</strong> <%= restaurant.category %></p>
+      <p><strong>Phone:</strong> <%= restaurant.phone_number %></p>
+
+      <p><strong>Reviews:</strong></p>
+      <ul>
+        <% restaurant.reviews.each do |review| %>
+          <li>
+            <%= review.content %> — Rating: <%= review.rating %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
